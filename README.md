@@ -229,6 +229,7 @@ Deploy or upgrade the Soroban escrow contract using [docs/contract-deployment.md
 - **[Troubleshooting Guide](docs/troubleshooting.md)** — Common issues and solutions
 - **[Production Deployment](docs/deployment-production.md)** — Deploy to AWS, GCP, or DigitalOcean
 - **[API Documentation](docs/api.md)** — Complete API reference
+- **[ELK logging guide](docs/logging.md)** — Enable the optional Docker log collection stack
 - **[Contract Deployment](docs/contract-deployment.md)** — Deploy Soroban smart contracts
 - **[Prometheus Metrics](backend/docs/METRICS.md)** — Metrics reference, PromQL queries, cardinality bounds, and observability setup
 
