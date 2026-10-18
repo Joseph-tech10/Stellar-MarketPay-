@@ -80,6 +80,7 @@ const timeEntryRoutes    = require("./routes/timeEntries");
 const tokenRoutes        = require("./routes/tokens");
 const webauthnRoutes     = require("./routes/webauthn");
 const webhookRoutes      = require("./routes/webhooks");
+const apiDocsRoutes      = require("./routes/apiDocs");
  
 const { setWebsocketConnections } = require("./metrics");
 const { startEscrowTimeoutChecker } = require("./services/escrowService");
@@ -208,6 +209,11 @@ app.use(cors({
 }));
  
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 150, standardHeaders: true, legacyHeaders: true }));
+
+// Keep the interactive API reference available locally without exposing it in production.
+if (process.env.NODE_ENV !== "production") {
+  app.use("/api/docs", apiDocsRoutes);
+}
  
 // ─── Routes ───────────────────────────────────────────────────────────────────
 app.use("/health",            healthRoutes);

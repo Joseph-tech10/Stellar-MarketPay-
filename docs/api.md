@@ -10,10 +10,12 @@ All routes documented here match the active routes mounted in [`backend/src/serv
 
 The Stellar MarketPay API provides OpenAPI 3.0 specification support with Swagger UI for interactive testing and exploration:
 
-- **Interactive Swagger UI**: `http://localhost:4000/api/docs`
-- **OpenAPI JSON Spec**: `http://localhost:4000/api/docs/json`
+- **Interactive Swagger UI (development only)**: `http://localhost:4000/api/docs`
+- **OpenAPI JSON Spec (development only)**: `http://localhost:4000/api/docs/json`
 - **OpenAPI Spec File**: Located at [`backend/docs/openapi.yaml`](../backend/docs/openapi.yaml)
 - **Regenerate Spec**: Run `npm run generate-openapi` within the `backend/` directory.
+
+The interactive UI and JSON route are mounted only when `NODE_ENV` is not `production`. Production deployments can still serve the checked-in OpenAPI files through their normal documentation process; the API server itself does not expose `/api/docs` in production.
 
 ### Base URL
 - **Local Development**: `http://localhost:4000`
